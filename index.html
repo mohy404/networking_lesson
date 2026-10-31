@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NETWORKING | الشبكات — افهم عالم الشبكات من الصفر</title>
+<meta name="description" content="منصة تعليمية تفاعلية لتعلم أساسيات الشبكات للمبتدئين بالعربي المصري.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a class="skip-link" href="#lessons">تخطي إلى المحتوى</a>
+
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a class="brand" href="#home" aria-label="NETWORKING الشبكات">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-en">NETWORKING</span><span class="brand-sep">|</span><span class="brand-ar">الشبكات</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="التنقل الرئيسي">
+      <a href="#home">الرئيسية</a>
+      <a href="#lessons">محتوى الدرس</a>
+      <a href="#practice">التطبيق العملي</a>
+      <a href="#quiz">الاختبار</a>
+      <a href="#tasks">التاسك</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="nav-progress" title="تقدمك في الكورس">
+        <div class="nav-progress-bar"><span id="navProgressFill"></span></div>
+        <span id="navProgressText">0%</span>
+      </div>
+      <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع الداكن/الفاتح">
+        <span id="themeIcon" aria-hidden="true">☾</span>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container hero-grid">
+    <div class="hero-text reveal">
+      <div class="badges">
+        <span class="badge">12 درس</span>
+        <span class="badge">محاكي Terminal</span>
+        <span class="badge">اختبار + تاسك</span>
+        <span class="badge">مستوى مبتدئ</span>
+      </div>
+      <h1>افهم عالم <span class="grad">الشبكات</span> من الصفر</h1>
+      <p class="hero-sub">من أول اتصال بين جهازين لحد ما تفتح Google وتستقبل البيانات من السيرفر.</p>
+      <p class="hero-desc">كورس تفاعلي بالعربي المصري المبسط: هتتعلم يعني إيه Network و IP و DNS و HTTP، وتجرب أوامر <code>ipconfig</code> و <code>ping</code> في محاكي، وتختبر نفسك وتسلّم الواجب في الآخر.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#lessons" id="startBtn">ابدأ التعلم</a>
+        <a class="btn btn-ghost" href="#journey">استكشف رحلة البيانات</a>
+      </div>
+      <div class="counters">
+        <div><b data-count="12">0</b><span>درس</span></div>
+        <div><b data-count="17">0</b><span>سؤال</span></div>
+        <div><b data-count="4">0</b><span>تاسك</span></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal" aria-label="رسم متحرك لشبكة: أجهزة وراوتر وسحابة وسيرفر" role="img">
+      <svg viewBox="0 0 520 420" class="hero-svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
+        </defs>
+        <g class="h-lines" stroke="url(#hg)" stroke-width="2" fill="none" stroke-dasharray="6 6">
+          <path id="hp1" d="M90 330 L260 220"/>
+          <path id="hp2" d="M260 330 L260 220"/>
+          <path id="hp3" d="M430 330 L260 220"/>
+          <path id="hp4" d="M260 220 L260 110"/>
+          <path id="hp5" d="M260 110 L430 70"/>
+        </g>
+        <!-- packets -->
+        <circle r="5" fill="#22D3EE"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#hp1"/></animateMotion></circle>
+        <circle r="5" fill="#22D3EE"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#hp2"/></animateMotion></circle>
+        <circle r="5" fill="#22C55E"><animateMotion dur="3.4s" repeatCount="indefinite"><mpath href="#hp3"/></animateMotion></circle>
+        <circle r="5" fill="#F59E0B"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#hp4"/></animateMotion></circle>
+        <circle r="5" fill="#6366F1"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#hp5"/></animateMotion></circle>
+        <!-- cloud -->
+        <g transform="translate(200 60)"><path d="M30 50 a22 22 0 0 1 8-40 a30 30 0 0 1 56 8 a20 20 0 0 1 4 32 z" fill="#141F30" stroke="#22D3EE" stroke-width="2"/><text x="64" y="40" text-anchor="middle" fill="#94A3B8" font-size="13" font-family="Cairo">Internet</text></g>
+        <!-- server -->
+        <g transform="translate(395 20)"><rect width="70" height="84" rx="10" fill="#141F30" stroke="#6366F1" stroke-width="2"/><rect x="10" y="12" width="50" height="16" rx="4" fill="#101827"/><rect x="10" y="34" width="50" height="16" rx="4" fill="#101827"/><circle cx="18" cy="20" r="3" fill="#22C55E"/><circle cx="18" cy="42" r="3" fill="#22C55E"/><text x="35" y="74" text-anchor="middle" fill="#94A3B8" font-size="11" font-family="Cairo">Server</text></g>
+        <!-- router -->
+        <g transform="translate(215 190)"><rect width="90" height="44" rx="10" fill="#141F30" stroke="#22D3EE" stroke-width="2"/><circle cx="20" cy="22" r="4" fill="#22C55E"/><circle cx="36" cy="22" r="4" fill="#F59E0B"/><circle cx="52" cy="22" r="4" fill="#22D3EE"/><text x="45" y="64" text-anchor="middle" fill="#94A3B8" font-size="12" font-family="Cairo">Router</text></g>
+        <!-- pcs -->
+        <g transform="translate(50 300)"><rect width="80" height="52" rx="6" fill="#141F30" stroke="#6366F1" stroke-width="2"/><text x="40" y="32" text-anchor="middle" fill="#F8FAFC" font-size="11" font-family="Fira Code">PC 1</text></g>
+        <g transform="translate(220 300)"><rect width="80" height="52" rx="6" fill="#141F30" stroke="#6366F1" stroke-width="2"/><text x="40" y="32" text-anchor="middle" fill="#F8FAFC" font-size="11" font-family="Fira Code">PC 2</text></g>
+        <g transform="translate(400 296)"><rect width="46" height="64" rx="8" fill="#141F30" stroke="#6366F1" stroke-width="2"/><text x="23" y="38" text-anchor="middle" fill="#F8FAFC" font-size="10" font-family="Fira Code">Mobile</text></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRESS -->
+<section class="section" id="progress">
+  <div class="container">
+    <div class="progress-card reveal">
+      <div class="progress-main">
+        <div class="ring" id="ring" role="img" aria-label="نسبة الإكمال">
+          <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="ring-bg"/><circle cx="60" cy="60" r="52" class="ring-fg" id="ringFg"/></svg>
+          <span id="ringText">0%</span>
+        </div>
+        <div>
+          <h2 class="h3">تقدمك في الكورس</h2>
+          <p class="muted" id="resumeText">ابدأ من الدرس الأول وكمّل خطوة بخطوة.</p>
+          <a class="btn btn-ghost btn-sm" id="resumeBtn" href="#lessons">كمّل من حيث وقفت</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="stLessons">0</b><span>دروس مكتملة</span></div>
+        <div class="stat"><b>12</b><span>إجمالي الدروس</span></div>
+        <div class="stat"><b id="stQuiz">لم يبدأ</b><span>الاختبار</span></div>
+        <div class="stat"><b id="stHw">لم يبدأ</b><span>الواجب</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LESSONS -->
+<section class="section" id="lessons">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="eyebrow">محتوى الدرس</span>
+      <h2>12 درس من الصفر للاحتراف</h2>
+      <p class="muted">اختار درس من القايمة، أو امشي بالترتيب. كل درس فيه شرح، تشبيه من الحياة، رسم توضيحي، وأمثلة عملية.</p>
+    </header>
+    <div class="lesson-layout">
+      <aside class="lesson-list" id="lessonList" aria-label="قائمة الدروس"></aside>
+      <div class="lesson-view" id="lessonView" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section class="section alt" id="practice">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="eyebrow">التطبيق العملي</span>
+      <h2>جرّب بإيدك</h2>
+      <p class="muted">أدوات تفاعلية: محلل روابط، رحلة البيانات، ومقارنة HTTP و HTTPS.</p>
+    </header>
+
+    <div class="block reveal" id="urlSection">
+      <h3>تشريح الـ URL</h3>
+      <p>الرابط مش كلمة واحدة؛ هو مجموعة أجزاء كل جزء له وظيفة. دوس على أي جزء تشوف معناه.</p>
+      <div class="url-demo" id="urlDemo1" dir="ltr"></div>
+      <div class="info-box" id="urlDemoInfo1">اختار جزء من الرابط فوق.</div>
+      <p class="mt">مثال أطول فيه Path و Query و Fragment:</p>
+      <div class="url-demo" id="urlDemo2" dir="ltr"></div>
+      <div class="info-box" id="urlDemoInfo2">اختار جزء من الرابط فوق.</div>
+      <h4 class="mt">محلل الروابط (URL Analyzer)</h4>
+      <form class="inline-form" id="urlForm">
+        <input id="urlInput" type="text" dir="ltr" value="https://example.com/products/phones?id=10#details" aria-label="اكتب رابط">
+        <button class="btn btn-primary" type="submit">حلّل</button>
+      </form>
+      <div id="urlResult" class="result-table-wrap"></div>
+    </div>
+
+    <div class="block reveal" id="httpsSection">
+      <h3>HTTP مقابل HTTPS</h3>
+      <div class="https-compare">
+        <div class="https-card" id="httpCard">
+          <div class="lock" aria-hidden="true">🔓</div>
+          <h4>HTTP</h4>
+          <ul>
+            <li>HTTP نفسه مش بيشفّر البيانات.</li>
+            <li>البورت الافتراضي: <code>80</code>.</li>
+            <li>لو حد بيراقب الشبكة ممكن يقرا البيانات.</li>
+          </ul>
+          <div class="pipe" dir="ltr"><span class="pk plain">password=1234</span></div>
+        </div>
+        <div class="https-card safe" id="httpsCard">
+          <div class="lock" aria-hidden="true">🔒</div>
+          <h4>HTTPS</h4>
+          <ul>
+            <li>HTTP فوق TLS: اتصال مشفّر.</li>
+            <li>حماية سلامة البيانات (Integrity).</li>
+            <li>التحقق من هوية السيرفر بالشهادات (Certificates).</li>
+            <li>البورت الافتراضي: <code>443</code>.</li>
+          </ul>
+          <div class="pipe" dir="ltr"><span class="pk enc">x9$#kQ2@!ZpL</span></div>
+        </div>
+      </div>
+      <button class="btn btn-ghost" id="httpsAnimBtn">شغّل مقارنة الإرسال</button>
+      <div class="note warn mt"><b>انتبه:</b> HTTPS مش معناه إن الموقع آمن أو موثوق 100%. موقع ممكن يستخدم HTTPS وفيه ثغرات زي SQL Injection أو XSS أو Broken Access Control، أو يكون موقع احتيال بشهادة سليمة. القفل بيأمّن «الطريق» مش «الموقع نفسه».</div>
+    </div>
+
+    <div class="block reveal" id="journey">
+      <h3>رحلة البيانات من جهازك إلى Google</h3>
+      <form class="inline-form" id="journeyForm">
+        <input id="journeyUrl" type="text" dir="ltr" value="https://www.google.com" aria-label="رابط الرحلة">
+        <button class="btn btn-primary" type="submit">ابدأ الرحلة</button>
+      </form>
+      <div id="journeyBox" hidden aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="section" id="quiz">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="eyebrow">الاختبار</span>
+      <h2>اختبر نفسك</h2>
+      <p class="muted">17 سؤال اختيار من متعدد. النجاح من 60% فأكتر.</p>
+    </header>
+    <div class="quiz-card reveal" id="quizBox"></div>
+  </div>
+</section>
+
+<!-- TASKS -->
+<section class="section alt" id="tasks">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="eyebrow">التاسك</span>
+      <h2>الواجب العملي</h2>
+      <p class="muted">افتح CMD على جهازك وجرّب بنفسك، وسجّل نتايجك هنا. كل حاجة بتتحفظ في متصفحك تلقائيًا. <b>ماتكتبش أي باسورد أو بيانات شخصية حساسة.</b></p>
+    </header>
+    <div id="tasksBox"></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>NETWORKING | الشبكات — كورس تعليمي تفاعلي. كل عناوين الـ IP والمخرجات في المحاكيات <b>أمثلة توضيحية فقط</b> ومش بيانات جهازك الحقيقية.</p>
+  </div>
+</footer>
+
+<script src="js/progress.js"></script>
+<script src="js/lessons.js"></script>
+<script src="js/terminal.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/tasks.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
